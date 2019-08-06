@@ -15,7 +15,7 @@ constants_json_path = "constants.json"
 with open(constants_json_path) as jsonFile:
     data = json.load(jsonFile)
 
-app = create_app(data["env"] or 'test')
+app = create_app(data["env"] or 'dev')
 app.register_blueprint(blueprint)
 
 app.app_context().push()
